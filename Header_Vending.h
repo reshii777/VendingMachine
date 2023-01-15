@@ -1,11 +1,11 @@
-// .h содержит определения классов и функций.
+// .h СЃРѕРґРµСЂР¶РёС‚ РѕРїСЂРµРґРµР»РµРЅРёСЏ РєР»Р°СЃСЃРѕРІ Рё С„СѓРЅРєС†РёР№.
 
 #pragma once
 #include <iostream>
 #include <string>
 using namespace std;
 
-class Snack									// класс Снек
+class Snack									// РєР»Р°СЃСЃ РЎРЅРµРє
 {
 public:
 	Snack(const string& name);
@@ -14,7 +14,7 @@ public:
 	~Snack() = default;
 
 	string getNameSnack() const;
-	void setNameSnack(string& name);	// Функция
+	void setNameSnack(string& name);	// Р¤СѓРЅРєС†РёСЏ
 
 	short getCostSnack() const;
 	void setCostSnack(short value);			
@@ -23,13 +23,13 @@ public:
 	void setCaloriesSnack(int value);		
 
 private:
-	string NameSnack;						// Название
-	int PriceSnack;							// Стоимость
-	int CaloriesSnack;						// Калории
+	string NameSnack;						// РќР°Р·РІР°РЅРёРµ
+	int PriceSnack;							// РЎС‚РѕРёРјРѕСЃС‚СЊ
+	int CaloriesSnack;						// РљР°Р»РѕСЂРёРё
 };
 
 //---//
-class SnackSlot								// класс Лоток(Слот) для снеков
+class SnackSlot								// РєР»Р°СЃСЃ Р›РѕС‚РѕРє(РЎР»РѕС‚) РґР»СЏ СЃРЅРµРєРѕРІ
 {
 public:
 	SnackSlot(short amt);
@@ -47,7 +47,7 @@ private:
 };
 
 //---//
-class  VendingMachine						// класс Автомат
+class  VendingMachine						// РєР»Р°СЃСЃ РђРІС‚РѕРјР°С‚
 {
 public:
 	VendingMachine(int slotCount);
@@ -57,12 +57,12 @@ public:
 	int getEmptySlotsCount() const;
 	int getSnacksCount() const;
 
-	void addSlot(SnackSlot* slot);			// Функция Добавления батончика
-	void giveSnack();						// Функция Выдачи продукта
+	void addSlot(SnackSlot* slot);			// Р¤СѓРЅРєС†РёСЏ Р”РѕР±Р°РІР»РµРЅРёСЏ Р±Р°С‚РѕРЅС‡РёРєР°
+	void giveSnack();						// Р¤СѓРЅРєС†РёСЏ Р’С‹РґР°С‡Рё РїСЂРѕРґСѓРєС‚Р°
 private:
-	int Size;								// Размер
-	int SnackCount;							// Количество Снека
-	int AllSlots;							// Все слота
-	int FreeSlots;							// Свободный слот
+	int Size;								// Р Р°Р·РјРµСЂ
+	int SnackCount;							// РљРѕР»РёС‡РµСЃС‚РІРѕ РЎРЅРµРєР°
+	int AllSlots;							// Р’СЃРµ СЃР»РѕС‚Р°
+	int FreeSlots;							// РЎРІРѕР±РѕРґРЅС‹Р№ СЃР»РѕС‚
 	SnackSlot** slots;
 };
