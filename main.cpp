@@ -6,32 +6,32 @@ using namespace std;
 int main() {
 	setlocale(LC_ALL, "Russian");
 
-	Snack* bounty = new Snack("Bounty");																//
-	Snack* snickers = new Snack("Snickers");															//
-	SnackSlot* slot = new SnackSlot(10/*количество батончиков, которые помещаются в слот*/);
-	slot->addSnack(bounty);																				//Добавляем батончик в слот
-	slot->addSnack(snickers);																			//Добавляем батончик в слот																			//Добавляем батончик в слот
-	VendingMachine* machine = new VendingMachine(22/*slotCount*/ /*Количество слотов для снеков*/);
-	machine->addSlot(slot);																				// Помещаем слот обратно в аппарат
+	Snack* bounty = new Snack("Bounty");									//
+	Snack* snickers = new Snack("Snickers");								//
+	SnackSlot* slot = new SnackSlot(10/*РєРѕР»РёС‡РµСЃС‚РІРѕ Р±Р°С‚РѕРЅС‡РёРєРѕРІ, РєРѕС‚РѕСЂС‹Рµ РїРѕРјРµС‰Р°СЋС‚СЃСЏ РІ СЃР»РѕС‚*/);		//
+	slot->addSnack(bounty);											//Р”РѕР±Р°РІР»СЏРµРј Р±Р°С‚РѕРЅС‡РёРє РІ СЃР»РѕС‚
+	slot->addSnack(snickers);										//Р”РѕР±Р°РІР»СЏРµРј Р±Р°С‚РѕРЅС‡РёРє РІ СЃР»РѕС‚
+	VendingMachine* machine = new VendingMachine(22/*slotCount*/ /*РљРѕР»РёС‡РµСЃС‚РІРѕ СЃР»РѕС‚РѕРІ РґР»СЏ СЃРЅРµРєРѕРІ*/);		//
+	machine->addSlot(slot);											// РџРѕРјРµС‰Р°РµРј СЃР»РѕС‚ РѕР±СЂР°С‚РЅРѕ РІ Р°РїРїР°СЂР°С‚
 
-	//cout << machine->getEmptySlotsCount();																// Должно выводить количество пустых слотов для снеков
+	//cout << machine->getEmptySlotsCount();								// Р”РѕР»Р¶РЅРѕ РІС‹РІРѕРґРёС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСѓСЃС‚С‹С… СЃР»РѕС‚РѕРІ РґР»СЏ СЃРЅРµРєРѕРІ
 	
-	cout << "Количество пустых слотов для снеков: " << machine->getEmptySlotsCount() << endl; // Должно выводить количество пустых слотов для снеков
-	cout << "Количество снеков в автомате: " << machine->getSnacksCount() << endl;
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РїСѓСЃС‚С‹С… СЃР»РѕС‚РѕРІ РґР»СЏ СЃРЅРµРєРѕРІ: " << machine->getEmptySlotsCount() << endl; 		// Р”РѕР»Р¶РЅРѕ РІС‹РІРѕРґРёС‚СЊ РєРѕР»РёС‡РµСЃС‚РІРѕ РїСѓСЃС‚С‹С… СЃР»РѕС‚РѕРІ РґР»СЏ СЃРЅРµРєРѕРІ
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃРЅРµРєРѕРІ РІ Р°РІС‚РѕРјР°С‚Рµ: " << machine->getSnacksCount() << endl;				
+
+	machine->giveSnack();											
+
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РїСѓСЃС‚С‹С… СЃР»РѕС‚РѕРІ РґР»СЏ СЃРЅРµРєРѕРІ: " << machine->getEmptySlotsCount() << endl;		
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃРЅРµРєРѕРІ РІ Р°РІС‚РѕРјР°С‚Рµ: " << machine->getSnacksCount() << endl;				
 
 	machine->giveSnack();
 
-	cout << "Количество пустых слотов для снеков: " << machine->getEmptySlotsCount() << endl;
-	cout << "Количество снеков в автомате: " << machine->getSnacksCount() << endl;
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РїСѓСЃС‚С‹С… СЃР»РѕС‚РѕРІ РґР»СЏ СЃРЅРµРєРѕРІ: " << machine->getEmptySlotsCount() << endl;		
+	cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ СЃРЅРµРєРѕРІ РІ Р°РІС‚РѕРјР°С‚Рµ: " << machine->getSnacksCount() << endl;				
 
-	machine->giveSnack();
-
-	cout << "Количество пустых слотов для снеков: " << machine->getEmptySlotsCount() << endl;
-	cout << "Количество снеков в автомате: " << machine->getSnacksCount() << endl;
-
-	delete machine;																						// Освобождаем память, выделенную для machine
-	delete slot;																						// Освобождаем память, выделенную для slot
-	delete snickers;																					// Освобождаем память, выделенную для snickers
-	delete bounty;																						// Освобождаем память, выделенную для bounty
+	delete machine;												// РћСЃРІРѕР±РѕР¶РґР°РµРј РїР°РјСЏС‚СЊ, РІС‹РґРµР»РµРЅРЅСѓСЋ РґР»СЏ machine
+	delete slot;												// РћСЃРІРѕР±РѕР¶РґР°РµРј РїР°РјСЏС‚СЊ, РІС‹РґРµР»РµРЅРЅСѓСЋ РґР»СЏ slot
+	delete snickers;											// РћСЃРІРѕР±РѕР¶РґР°РµРј РїР°РјСЏС‚СЊ, РІС‹РґРµР»РµРЅРЅСѓСЋ РґР»СЏ snickers
+	delete bounty;												// РћСЃРІРѕР±РѕР¶РґР°РµРј РїР°РјСЏС‚СЊ, РІС‹РґРµР»РµРЅРЅСѓСЋ РґР»СЏ bounty
 }
 
