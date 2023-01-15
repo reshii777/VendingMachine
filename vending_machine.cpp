@@ -1,4 +1,4 @@
-// .cpp реализация класса
+// .cpp СЂРµР°Р»РёР·Р°С†РёСЏ РєР»Р°СЃСЃР°
 
 #include <iostream>
 #include <string>
@@ -84,7 +84,7 @@ void SnackSlot::addSnack(Snack* snack)
 	{
 		Snacks[SnackCount] = snack;
 		++SnackCount;
-		cout << snack->getNameSnack() << " добавлен в слот" << endl;
+		cout << snack->getNameSnack() << " РґРѕР±Р°РІР»РµРЅ РІ СЃР»РѕС‚" << endl;
 	}
 }
 
@@ -93,7 +93,7 @@ void SnackSlot::giveSnack()
 	if (SnackCount > 0)
 	{
 		--SnackCount;
-		cout << Snacks[SnackCount]->getNameSnack() << " выдан" << endl;
+		cout << Snacks[SnackCount]->getNameSnack() << " РІС‹РґР°РЅ" << endl;
 	}
 }
 
